@@ -60,9 +60,9 @@ pipeline {
             steps {
                 script {
                     echo "Running Playwright tests: ${params.TEST_FILE} with ${BROWSER} browser..."
-                    sh '''
-                        npx playwright test ${TEST_FILE} --project=${BROWSER}
-                    '''
+                    sh """
+                        npx playwright test ${params.TEST_FILE} --project=${BROWSER}
+                    """
                 }
             }
         }
